@@ -59,58 +59,90 @@ class _TopnavbarWidgetState extends State<TopnavbarWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (widget.hidden == false)
-                    FlutterFlowIconButton(
-                      borderColor: FlutterFlowTheme.of(context).primaryText,
-                      borderRadius: 45.0,
-                      buttonSize: 40.0,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                      icon: Icon(
-                        Icons.arrow_back_rounded,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
-                    ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 0.0, 0.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        'assets/images/logo-transparent.png',
-                        width: 66.9,
-                        height: 42.21,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Grow Pal',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          fontSize: 20.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
+                    Align(
+                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: FlutterFlowTheme.of(context).primaryText,
+                          borderRadius: 45.0,
+                          buttonSize: 40.0,
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          icon: Icon(
+                            Icons.arrow_back_rounded,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
                         ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 0.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: FlutterFlowTheme.of(context).primaryText,
-                      borderRadius: 45.0,
-                      buttonSize: 40.0,
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                      icon: Icon(
-                        Icons.notifications_outlined,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24.0,
                       ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                    ),
+                  Expanded(
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: Align(
+                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/logo-transparent.png',
+                                  width: 66.9,
+                                  height: 42.2,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Text(
+                                  'Grow Pal',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        fontSize: 20.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ].divide(SizedBox(width: 0.0)),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: AlignmentDirectional(1.0, 0.0),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: FlutterFlowTheme.of(context).primaryText,
+                          borderRadius: 45.0,
+                          buttonSize: 40.0,
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          icon: Icon(
+                            Icons.notifications_outlined,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                      ),
                     ),
                   ),
                 ].addToStart(SizedBox(width: 0.0)),

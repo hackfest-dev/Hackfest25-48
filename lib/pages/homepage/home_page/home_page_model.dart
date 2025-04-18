@@ -1,4 +1,4 @@
-import '/components/topnavbar_widget.dart';
+import '/components/topnavi_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
@@ -6,16 +6,16 @@ import 'package:flutter/material.dart';
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for topnavbar component.
-  late TopnavbarModel topnavbarModel;
+  // Model for topnavi component.
+  late TopnaviModel topnaviModel;
 
   @override
   void initState(BuildContext context) {
-    topnavbarModel = createModel(context, () => TopnavbarModel());
+    topnaviModel = createModel(context, () => TopnaviModel());
   }
 
   @override
   void dispose() {
-    topnavbarModel.dispose();
+    topnaviModel.dispose();
   }
 }

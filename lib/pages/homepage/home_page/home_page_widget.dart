@@ -1,4 +1,4 @@
-import '/components/topnavbar_widget.dart';
+import '/components/topnavi_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -56,9 +56,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       Expanded(
                         child: wrapWithModel(
-                          model: _model.topnavbarModel,
+                          model: _model.topnaviModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: TopnavbarWidget(),
+                          child: TopnaviWidget(
+                            hidden: true,
+                          ),
                         ),
                       ),
                     ],

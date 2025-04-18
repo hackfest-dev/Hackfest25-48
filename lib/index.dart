@@ -8,3 +8,4 @@ export '/pages/intropages/secondintropage/secondintropage_widget.dart'
     show SecondintropageWidget;
 export '/pages/intropages/thirdintropage/thirdintropage_widget.dart'
     show ThirdintropageWidget;
+export '/pages/my_plants/myplants/myplants_widget.dart' show MyplantsWidget;
