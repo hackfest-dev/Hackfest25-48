@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "595029831234",
+    "project_id": "hackfest25-d0164",
+    "storage_bucket": "hackfest25-d0164.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595029831234:android:29e739b2f855cb6d28c7db",
+        "android_client_info": {
+          "package_name": "com.mycompany.hackfest25"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB0Osk-yfUOFRMnu_zJwzpSZEW9R_Bo0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
