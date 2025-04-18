@@ -36,142 +36,144 @@ class _BottomnavWidgetState extends State<BottomnavWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: AlignmentDirectional(0.0, -1.0),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
-        child: Container(
-          width: 360.0,
-          height: 70.0,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFB39D271), Color(0xFF39D2B4)],
-              stops: [0.0, 1.0],
-              begin: AlignmentDirectional(0.14, -1.0),
-              end: AlignmentDirectional(-0.14, 1.0),
-            ),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(8.0),
-              bottomRight: Radius.circular(8.0),
-              topLeft: Radius.circular(8.0),
-              topRight: Radius.circular(8.0),
-            ),
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+      child: Container(
+        width: 360.0,
+        height: 70.0,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFB39D271), Color(0xFF39D2B4)],
+            stops: [0.0, 1.0],
+            begin: AlignmentDirectional(0.14, -1.0),
+            end: AlignmentDirectional(-0.14, 1.0),
           ),
-          child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.home_outlined,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(8.0),
+            bottomRight: Radius.circular(8.0),
+            topLeft: Radius.circular(8.0),
+            topRight: Radius.circular(8.0),
+          ),
+        ),
+        child: Align(
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.home_outlined,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
-                    SizedBox(
-                      width: 30.0,
-                      child: Divider(
-                        height: 2.0,
-                        thickness: 2.0,
-                        color: FlutterFlowTheme.of(context).alternate,
-                      ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    child: Divider(
+                      height: 2.0,
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).alternate,
                     ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.home_outlined,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.turned_in_not_sharp,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
-                    SizedBox(
-                      width: 30.0,
-                      child: Divider(
-                        height: 2.0,
-                        thickness: 2.0,
-                        color: FlutterFlowTheme.of(context).alternate,
-                      ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    child: Divider(
+                      height: 2.0,
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).alternate,
                     ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.home_outlined,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.chat_outlined,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
-                    SizedBox(
-                      width: 30.0,
-                      child: Divider(
-                        height: 2.0,
-                        thickness: 2.0,
-                        color: FlutterFlowTheme.of(context).alternate,
-                      ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    child: Divider(
+                      height: 2.0,
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).alternate,
                     ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.home_outlined,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.person_outline,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
-                    SizedBox(
-                      width: 30.0,
-                      child: Divider(
-                        height: 2.0,
-                        thickness: 2.0,
-                        color: FlutterFlowTheme.of(context).alternate,
-                      ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                  SizedBox(
+                    width: 30.0,
+                    child: Divider(
+                      height: 2.0,
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).alternate,
                     ),
-                  ],
-                ),
-              ]
-                  .divide(SizedBox(width: 16.0))
-                  .addToStart(SizedBox(width: 16.0))
-                  .addToEnd(SizedBox(width: 16.0)),
-            ),
+                  ),
+                ],
+              ),
+            ]
+                .divide(SizedBox(width: 16.0))
+                .addToStart(SizedBox(width: 16.0))
+                .addToEnd(SizedBox(width: 16.0)),
           ),
         ),
       ),
