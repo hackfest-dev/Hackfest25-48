@@ -1,4 +1,5 @@
-import '/components/topnavbar_widget.dart';
+import '/components/bottomnav_widget.dart';
+import '/components/topnavi_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'myplants_widget.dart' show MyplantsWidget;
 import 'package:flutter/material.dart';
@@ -6,16 +7,20 @@ import 'package:flutter/material.dart';
 class MyplantsModel extends FlutterFlowModel<MyplantsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for topnavbar component.
-  late TopnavbarModel topnavbarModel;
+  // Model for topnavi component.
+  late TopnaviModel topnaviModel;
+  // Model for bottomnav component.
+  late BottomnavModel bottomnavModel;
 
   @override
   void initState(BuildContext context) {
-    topnavbarModel = createModel(context, () => TopnavbarModel());
+    topnaviModel = createModel(context, () => TopnaviModel());
+    bottomnavModel = createModel(context, () => BottomnavModel());
   }
 
   @override
   void dispose() {
-    topnavbarModel.dispose();
+    topnaviModel.dispose();
+    bottomnavModel.dispose();
   }
 }
