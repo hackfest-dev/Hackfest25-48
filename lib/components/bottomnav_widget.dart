@@ -75,89 +75,102 @@ class _BottomnavWidgetState extends State<BottomnavWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 50.0,
-                    fillColor: Color(0xFF39D298),
-                    icon: Icon(
-                      Icons.home_outlined,
-                      color: FlutterFlowTheme.of(context).info,
-                      size: 24.0,
-                    ),
-                    onPressed: () async {
-                      context.pushNamed(HomePageWidget.routeName);
-                    },
-                  ),
-                  SizedBox(
-                    width: 30.0,
-                    child: Divider(
-                      height: 2.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
+                  Opacity(
+                    opacity: widget.selectedindex == 1 ? 1.0 : 0.5,
+                    child: FlutterFlowIconButton(
+                      borderRadius: 8.0,
+                      buttonSize: 50.0,
+                      fillColor: Color(0xFF39D298),
+                      icon: Icon(
+                        Icons.home_outlined,
+                        color: FlutterFlowTheme.of(context).info,
+                        size: 24.0,
+                      ),
+                      onPressed: () async {
+                        context.pushNamed(Home3Widget.routeName);
+                      },
                     ),
                   ),
+                  if (widget.selectedindex == 1)
+                    SizedBox(
+                      width: 30.0,
+                      child: Divider(
+                        height: 2.0,
+                        thickness: 2.0,
+                        color: FlutterFlowTheme.of(context).alternate,
+                      ),
+                    ),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 50.0,
-                    fillColor: Color(0xFF39D298),
-                    icon: Icon(
-                      Icons.turned_in_not_sharp,
-                      color: FlutterFlowTheme.of(context).info,
-                      size: 24.0,
-                    ),
-                    onPressed: () async {
-                      context.pushNamed(HealthWidget.routeName);
-                    },
-                  ),
-                  SizedBox(
-                    width: 30.0,
-                    child: Divider(
-                      height: 2.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
+                  Opacity(
+                    opacity: widget.selectedindex == 2 ? 1.0 : 0.5,
+                    child: FlutterFlowIconButton(
+                      borderRadius: 8.0,
+                      buttonSize: 50.0,
+                      fillColor: Color(0xFF39D298),
+                      icon: Icon(
+                        Icons.turned_in_not_sharp,
+                        color: FlutterFlowTheme.of(context).info,
+                        size: 24.0,
+                      ),
+                      onPressed: () async {
+                        context.pushNamed(HealthWidget.routeName);
+                      },
                     ),
                   ),
+                  if (widget.selectedindex == 2)
+                    SizedBox(
+                      width: 30.0,
+                      child: Divider(
+                        height: 2.0,
+                        thickness: 2.0,
+                        color: FlutterFlowTheme.of(context).alternate,
+                      ),
+                    ),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 50.0,
-                    fillColor: Color(0xFF39D298),
-                    icon: Icon(
-                      Icons.chat_outlined,
-                      color: FlutterFlowTheme.of(context).info,
-                      size: 24.0,
-                    ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                  ),
-                  SizedBox(
-                    width: 30.0,
-                    child: Divider(
-                      height: 2.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
+                  Opacity(
+                    opacity: widget.selectedindex == 3 ? 1.0 : 0.5,
+                    child: FlutterFlowIconButton(
+                      borderRadius: 8.0,
+                      buttonSize: 50.0,
+                      fillColor: Color(0xFF39D298),
+                      icon: Icon(
+                        Icons.chat_outlined,
+                        color: FlutterFlowTheme.of(context).info,
+                        size: 24.0,
+                      ),
+                      onPressed: () async {
+                        context.pushNamed(ChatWidget.routeName);
+                      },
                     ),
                   ),
+                  if (widget.selectedindex == 3)
+                    SizedBox(
+                      width: 30.0,
+                      child: Divider(
+                        height: 2.0,
+                        thickness: 2.0,
+                        color: FlutterFlowTheme.of(context).alternate,
+                      ),
+                    ),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (widget.selectedindex == 4)
-                    FlutterFlowIconButton(
+                  Opacity(
+                    opacity: widget.selectedindex == 4 ? 1.0 : 0.5,
+                    child: FlutterFlowIconButton(
                       borderRadius: 8.0,
                       buttonSize: 50.0,
                       fillColor: Color(0xFF39D298),
@@ -170,14 +183,16 @@ class _BottomnavWidgetState extends State<BottomnavWidget> {
                         context.pushNamed(UserProfileWidget.routeName);
                       },
                     ),
-                  SizedBox(
-                    width: 30.0,
-                    child: Divider(
-                      height: 2.0,
-                      thickness: 2.0,
-                      color: FlutterFlowTheme.of(context).alternate,
-                    ),
                   ),
+                  if (widget.selectedindex == 4)
+                    SizedBox(
+                      width: 30.0,
+                      child: Divider(
+                        height: 2.0,
+                        thickness: 2.0,
+                        color: FlutterFlowTheme.of(context).alternate,
+                      ),
+                    ),
                 ],
               ),
             ]

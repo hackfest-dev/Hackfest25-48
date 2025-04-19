@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/bottomnav_widget.dart';
 import '/components/topnavi_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -94,19 +95,75 @@ class _HealthWidgetState extends State<HealthWidget>
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Text(
-                                  'Hello ',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        fontSize: 34.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              child: FutureBuilder<List<UserPlantsRow>>(
+                                future: UserPlantsTable().querySingleRow(
+                                  queryFn: (q) => q,
                                 ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<UserPlantsRow> rowUserPlantsRowList =
+                                      snapshot.data!;
+
+                                  final rowUserPlantsRow =
+                                      rowUserPlantsRowList.isNotEmpty
+                                          ? rowUserPlantsRowList.first
+                                          : null;
+
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  40.0, 0.0, 30.0, 0.0),
+                                          child: Text(
+                                            valueOrDefault<String>(
+                                              rowUserPlantsRow?.plantName,
+                                              'AloeVera',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: Color(0xFF10C93E),
+                                                  fontSize: 30.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          rowUserPlantsRow!.imageUrl!,
+                                          width: 200.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
                               ),
                             ),
                           ],
@@ -131,17 +188,12 @@ class _HealthWidgetState extends State<HealthWidget>
                                             fontFamily: 'Inter Tight',
                                             letterSpacing: 0.0,
                                           ),
-                                  labelColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  unselectedLabelColor:
-                                      FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).accent1,
+                                  labelColor: Color(0xFF171817),
+                                  unselectedLabelColor: Color(0xFF309C39),
+                                  backgroundColor: Color(0xFF89D518),
                                   unselectedBackgroundColor:
                                       FlutterFlowTheme.of(context).alternate,
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).primary,
+                                  borderColor: Color(0xFF10C93E),
                                   unselectedBorderColor:
                                       FlutterFlowTheme.of(context).alternate,
                                   borderWidth: 2.0,
@@ -182,37 +234,44 @@ class _HealthWidgetState extends State<HealthWidget>
                                       builder: (context) => Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        30.0, 20.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Health Logs',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 24.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 10.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          30.0, 20.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Health Logs',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                        ),
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                           Expanded(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Row(
+                                                Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
                                                     Container(
-                                                      width: 100.0,
+                                                      width: 393.0,
                                                       height: 100.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -327,7 +386,9 @@ class _HealthWidgetState extends State<HealthWidget>
                   child: wrapWithModel(
                     model: _model.bottomnavModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: BottomnavWidget(),
+                    child: BottomnavWidget(
+                      selectedindex: 2,
+                    ),
                   ),
                 ),
               ],

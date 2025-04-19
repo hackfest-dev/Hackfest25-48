@@ -600,7 +600,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             });
 
                                             context.pushNamedAuth(
-                                                HomePageWidget.routeName,
+                                                Home3Widget.routeName,
                                                 context.mounted);
 
                                             safeSetState(() {});

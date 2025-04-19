@@ -102,8 +102,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/980/600',
+                                                  child: Image.asset(
+                                                    'assets/images/plant-care.png',
                                                     width: 150.0,
                                                     height: 150.0,
                                                     fit: BoxFit.cover,
@@ -509,7 +509,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     child: wrapWithModel(
                       model: _model.bottomnavModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: BottomnavWidget(),
+                      child: BottomnavWidget(
+                        selectedindex: 1,
+                      ),
                     ),
                   ),
                   wrapWithModel(

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'image_model.dart';
 export 'image_model.dart';
@@ -23,6 +24,7 @@ class _ImageWidgetState extends State<ImageWidget> {
   late ImageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -309,11 +311,16 @@ class _ImageWidgetState extends State<ImageWidget> {
                 ),
                 FFButtonWidget(
                   onPressed: () async {
+                    currentUserLocationValue = await getCurrentUserLocation(
+                        defaultLocation: LatLng(0.0, 0.0));
                     _model.imageInBase64 = await actions.convertImageToBase64(
                       _model.uploadedLocalFile,
                     );
                     _model.apiResult = await PlantIDGroup.healthcheckCall.call(
                       imageBase64: _model.imageInBase64,
+                      latitude: functions.getLatitude(currentUserLocationValue),
+                      longitude:
+                          functions.getLongitude(currentUserLocationValue),
                     );
 
                     if ((_model.apiResult?.jsonBody ?? '')) {

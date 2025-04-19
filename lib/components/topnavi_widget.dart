@@ -82,7 +82,7 @@ class _TopnaviWidgetState extends State<TopnaviWidget> {
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed(HomePageWidget.routeName);
+                      context.pushNamed(Home3Widget.routeName);
                     },
                   ),
                 ),

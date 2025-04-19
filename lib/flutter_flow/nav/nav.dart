@@ -77,13 +77,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomeWidget() : GetstartedpageWidget(),
+          appStateNotifier.loggedIn ? Home3Widget() : GetstartedpageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : GetstartedpageWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? Home3Widget()
+              : GetstartedpageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -159,6 +160,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: HomeWidget.routeName,
           path: HomeWidget.routePath,
           builder: (context, params) => HomeWidget(),
+        ),
+        FFRoute(
+          name: Home3Widget.routeName,
+          path: Home3Widget.routePath,
+          builder: (context, params) => Home3Widget(),
+        ),
+        FFRoute(
+          name: ChatWidget.routeName,
+          path: ChatWidget.routePath,
+          builder: (context, params) => ChatWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

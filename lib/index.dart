@@ -23,3 +23,5 @@ export '/pages/my_plants/notificationpage/notification/notification_widget.dart'
 export '/pages/uploadimage/image/image_widget.dart' show ImageWidget;
 export '/pages/authpages/login/login_widget.dart' show LoginWidget;
 export '/pages/home/home_widget.dart' show HomeWidget;
+export '/pages/homepage/home3/home3_widget.dart' show Home3Widget;
+export '/pages/chatagent/chat/chat_widget.dart' show ChatWidget;

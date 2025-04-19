@@ -358,7 +358,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         }
 
                                         context.pushNamedAuth(
-                                            HomePageWidget.routeName,
+                                            Home3Widget.routeName,
                                             context.mounted);
                                       },
                                       text: 'Sign In',
