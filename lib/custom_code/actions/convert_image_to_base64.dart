@@ -8,11 +8,12 @@ import 'package:flutter/material.dart';
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/services.dart';
+// import 'package:flutter_flow/flutter_flow_util.dart';
 
-Future<String> convertImageToBase64(String filePath) async {
-  final File imageFile = File(filePath);
-  final List<int> imageBytes = await imageFile.readAsBytes();
-  final String base64Image = base64Encode(imageBytes);
-  return base64Image;
+Future<String> convertImageToBase64(FFUploadedFile file) async {
+  if (file.bytes != null) {
+    return base64Encode(file.bytes!);
+  } else {
+    throw Exception("File does not contain byte data.");
+  }
 }
