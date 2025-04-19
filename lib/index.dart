@@ -9,3 +9,7 @@ export '/pages/intropages/secondintropage/secondintropage_widget.dart'
 export '/pages/intropages/thirdintropage/thirdintropage_widget.dart'
     show ThirdintropageWidget;
 export '/pages/my_plants/myplants/myplants_widget.dart' show MyplantsWidget;
+export '/pages/my_plants/theplantpage/theplantpage_widget.dart'
+    show TheplantpageWidget;
+export '/pages/user_profile/user_profile/user_profile_widget.dart'
+    show UserProfileWidget;

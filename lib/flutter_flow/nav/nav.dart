@@ -69,6 +69,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: MyplantsWidget.routeName,
           path: MyplantsWidget.routePath,
           builder: (context, params) => MyplantsWidget(),
+        ),
+        FFRoute(
+          name: TheplantpageWidget.routeName,
+          path: TheplantpageWidget.routePath,
+          builder: (context, params) => TheplantpageWidget(),
+        ),
+        FFRoute(
+          name: UserProfileWidget.routeName,
+          path: UserProfileWidget.routePath,
+          builder: (context, params) => UserProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
