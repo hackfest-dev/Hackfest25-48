@@ -140,7 +140,7 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
                               0.0, 70.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed(CreateAccount1Widget.routeName);
+                              context.pushNamed(CreateAccountWidget.routeName);
                             },
                             text: 'Next',
                             options: FFButtonOptions(

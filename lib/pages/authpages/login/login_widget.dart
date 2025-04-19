@@ -4,28 +4,28 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'login2_model.dart';
-export 'login2_model.dart';
+import 'login_model.dart';
+export 'login_model.dart';
 
-class Login2Widget extends StatefulWidget {
-  const Login2Widget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
-  static String routeName = 'Login2';
-  static String routePath = '/login2';
+  static String routeName = 'Login';
+  static String routePath = '/login';
 
   @override
-  State<Login2Widget> createState() => _Login2WidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _Login2WidgetState extends State<Login2Widget> {
-  late Login2Model _model;
+class _LoginWidgetState extends State<LoginWidget> {
+  late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Login2Model());
+    _model = createModel(context, () => LoginModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -404,7 +404,7 @@ class _Login2WidgetState extends State<Login2Widget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                              CreateAccount1Widget.routeName);
+                                              CreateAccountWidget.routeName);
                                         },
                                         child: RichText(
                                           textScaler:

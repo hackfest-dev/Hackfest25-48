@@ -13,13 +13,13 @@ export '/pages/my_plants/theplantpage/theplantpage_widget.dart'
     show TheplantpageWidget;
 export '/pages/user_profile/user_profile/user_profile_widget.dart'
     show UserProfileWidget;
-export '/pages/authpages/create_account1/create_account1_widget.dart'
-    show CreateAccount1Widget;
+export '/pages/authpages/create_account/create_account_widget.dart'
+    show CreateAccountWidget;
 export '/pages/plantdetails/health/health_widget.dart' show HealthWidget;
 export '/pages/plantdetails/healthlogdetail/healthlogdetail_widget.dart'
     show HealthlogdetailWidget;
-export '/pages/notificationpage/notification/notification_widget.dart'
+export '/pages/my_plants/notificationpage/notification/notification_widget.dart'
     show NotificationWidget;
 export '/pages/uploadimage/image/image_widget.dart' show ImageWidget;
-export '/pages/authpages/login2/login2_widget.dart' show Login2Widget;
+export '/pages/authpages/login/login_widget.dart' show LoginWidget;
 export '/pages/home/home_widget.dart' show HomeWidget;

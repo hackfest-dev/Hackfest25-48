@@ -1,10 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'create_account1_widget.dart' show CreateAccount1Widget;
+import 'create_account_widget.dart' show CreateAccountWidget;
 import 'package:flutter/material.dart';
 
-class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
+class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for username widget.

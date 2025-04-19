@@ -75,20 +75,19 @@ class _BottomnavWidgetState extends State<BottomnavWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (widget.selectedindex == 1)
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.home_outlined,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () async {
-                        context.pushNamed(HomePageWidget.routeName);
-                      },
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.home_outlined,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(HomePageWidget.routeName);
+                    },
+                  ),
                   SizedBox(
                     width: 30.0,
                     child: Divider(
@@ -103,20 +102,19 @@ class _BottomnavWidgetState extends State<BottomnavWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (widget.selectedindex == 2)
-                    FlutterFlowIconButton(
-                      borderRadius: 8.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0xFF39D298),
-                      icon: Icon(
-                        Icons.turned_in_not_sharp,
-                        color: FlutterFlowTheme.of(context).info,
-                        size: 24.0,
-                      ),
-                      onPressed: () async {
-                        context.pushNamed(HealthWidget.routeName);
-                      },
+                  FlutterFlowIconButton(
+                    borderRadius: 8.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0xFF39D298),
+                    icon: Icon(
+                      Icons.turned_in_not_sharp,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 24.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(HealthWidget.routeName);
+                    },
+                  ),
                   SizedBox(
                     width: 30.0,
                     child: Divider(

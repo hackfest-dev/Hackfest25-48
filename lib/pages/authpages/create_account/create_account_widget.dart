@@ -6,28 +6,28 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'create_account1_model.dart';
-export 'create_account1_model.dart';
+import 'create_account_model.dart';
+export 'create_account_model.dart';
 
-class CreateAccount1Widget extends StatefulWidget {
-  const CreateAccount1Widget({super.key});
+class CreateAccountWidget extends StatefulWidget {
+  const CreateAccountWidget({super.key});
 
-  static String routeName = 'CreateAccount1';
-  static String routePath = '/createAccount1';
+  static String routeName = 'CreateAccount';
+  static String routePath = '/createAccount';
 
   @override
-  State<CreateAccount1Widget> createState() => _CreateAccount1WidgetState();
+  State<CreateAccountWidget> createState() => _CreateAccountWidgetState();
 }
 
-class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
-  late CreateAccount1Model _model;
+class _CreateAccountWidgetState extends State<CreateAccountWidget> {
+  late CreateAccountModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateAccount1Model());
+    _model = createModel(context, () => CreateAccountModel());
 
     _model.usernameTextController ??= TextEditingController();
     _model.usernameFocusNode ??= FocusNode();
@@ -647,7 +647,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                       if (Navigator.of(context).canPop()) {
                                         context.pop();
                                       }
-                                      context.pushNamed(Login2Widget.routeName);
+                                      context.pushNamed(LoginWidget.routeName);
                                     },
                                     child: RichText(
                                       textScaler:

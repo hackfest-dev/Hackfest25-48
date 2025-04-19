@@ -126,9 +126,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => UserProfileWidget(),
         ),
         FFRoute(
-          name: CreateAccount1Widget.routeName,
-          path: CreateAccount1Widget.routePath,
-          builder: (context, params) => CreateAccount1Widget(),
+          name: CreateAccountWidget.routeName,
+          path: CreateAccountWidget.routePath,
+          builder: (context, params) => CreateAccountWidget(),
         ),
         FFRoute(
           name: HealthWidget.routeName,
@@ -151,9 +151,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ImageWidget(),
         ),
         FFRoute(
-          name: Login2Widget.routeName,
-          path: Login2Widget.routePath,
-          builder: (context, params) => Login2Widget(),
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: HomeWidget.routeName,
