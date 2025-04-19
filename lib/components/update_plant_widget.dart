@@ -261,6 +261,8 @@ class _UpdatePlantWidgetState extends State<UpdatePlantWidget> {
                     imageBase64: _model.imageInBase64,
                   );
 
+                  if ((_model.apiResult?.succeeded ?? true)) {}
+
                   safeSetState(() {});
                 },
                 text: 'Submit Health Check',

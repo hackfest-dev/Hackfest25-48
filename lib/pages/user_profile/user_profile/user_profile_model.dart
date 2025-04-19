@@ -22,14 +22,6 @@ class UserProfileModel extends FlutterFlowModel<UserProfileWidget> {
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for Switch widget.
-  bool? switchValue1;
-  // State field(s) for Switch widget.
-  bool? switchValue2;
 
   @override
   void initState(BuildContext context) {}
@@ -47,8 +39,5 @@ class UserProfileModel extends FlutterFlowModel<UserProfileWidget> {
 
     textFieldFocusNode4?.dispose();
     textController4?.dispose();
-
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
   }
 }
