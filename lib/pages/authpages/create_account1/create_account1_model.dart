@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for username widget.
+  FocusNode? usernameFocusNode;
+  TextEditingController? usernameTextController;
+  String? Function(BuildContext, String?)? usernameTextControllerValidator;
   // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode1;
-  TextEditingController? emailAddressTextController1;
-  String? Function(BuildContext, String?)? emailAddressTextController1Validator;
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode2;
-  TextEditingController? emailAddressTextController2;
-  String? Function(BuildContext, String?)? emailAddressTextController2Validator;
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -29,7 +29,7 @@ class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ProfilesRow? newProfile;
+  ProfileRow? newProfile;
 
   @override
   void initState(BuildContext context) {
@@ -39,11 +39,11 @@ class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
 
   @override
   void dispose() {
-    emailAddressFocusNode1?.dispose();
-    emailAddressTextController1?.dispose();
+    usernameFocusNode?.dispose();
+    usernameTextController?.dispose();
 
-    emailAddressFocusNode2?.dispose();
-    emailAddressTextController2?.dispose();
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

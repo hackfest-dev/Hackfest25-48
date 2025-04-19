@@ -1,7 +1,6 @@
 import '/components/bottomnav_widget.dart';
 import '/components/topnavi_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +34,8 @@ class _HealthWidgetState extends State<HealthWidget>
       length: 4,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -77,9 +78,7 @@ class _HealthWidgetState extends State<HealthWidget>
                                   child: wrapWithModel(
                                     model: _model.topnaviModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: TopnaviWidget(
-                                      hidden: false,
-                                    ),
+                                    child: TopnaviWidget(),
                                   ),
                                 ),
                               ],
@@ -272,55 +271,6 @@ class _HealthWidgetState extends State<HealthWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                      ),
-                                                      child: Container(
-                                                        width: 370.0,
-                                                        height: 230.0,
-                                                        child:
-                                                            FlutterFlowLineChart(
-                                                          data: [
-                                                            FFLineChartData(
-                                                              xData: [],
-                                                              yData: [],
-                                                              settings:
-                                                                  LineChartBarData(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                barWidth: 2.0,
-                                                                isCurved: true,
-                                                                dotData: FlDotData(
-                                                                    show:
-                                                                        false),
-                                                                belowBarData:
-                                                                    BarAreaData(
-                                                                  show: true,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent1,
-                                                                ),
-                                                              ),
-                                                            )
-                                                          ],
-                                                          chartStylingInfo:
-                                                              ChartStylingInfo(
-                                                            backgroundColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                            showBorder: false,
-                                                          ),
-                                                          axisBounds:
-                                                              AxisBounds(),
-                                                          xAxisLabelInfo:
-                                                              AxisLabelInfo(
-                                                            reservedSize: 32.0,
-                                                          ),
-                                                          yAxisLabelInfo:
-                                                              AxisLabelInfo(
-                                                            reservedSize: 40.0,
-                                                          ),
-                                                        ),
                                                       ),
                                                     ),
                                                   ),

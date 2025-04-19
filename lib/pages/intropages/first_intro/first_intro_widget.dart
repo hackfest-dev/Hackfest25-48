@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'first_intro_model.dart';
 export 'first_intro_model.dart';
@@ -24,6 +25,8 @@ class _FirstIntroWidgetState extends State<FirstIntroWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FirstIntroModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,7 +63,7 @@ class _FirstIntroWidgetState extends State<FirstIntroWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Identify Your Plants and its health',
+                            'Identify Your Plants and its Health',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -136,8 +139,9 @@ class _FirstIntroWidgetState extends State<FirstIntroWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 70.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context
+                                  .pushNamed(SecondintropageWidget.routeName);
                             },
                             text: 'Next',
                             options: FFButtonOptions(

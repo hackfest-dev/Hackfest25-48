@@ -77,13 +77,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : Login1Widget(),
+          appStateNotifier.loggedIn ? HomeWidget() : GetstartedpageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : Login1Widget(),
+              appStateNotifier.loggedIn ? HomeWidget() : GetstartedpageWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -128,17 +128,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: CreateAccount1Widget.routeName,
           path: CreateAccount1Widget.routePath,
-          builder: (context, params) => CreateAccount1Widget(
-            check: params.getParam(
-              'check',
-              ParamType.bool,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: Login1Widget.routeName,
-          path: Login1Widget.routePath,
-          builder: (context, params) => Login1Widget(),
+          builder: (context, params) => CreateAccount1Widget(),
         ),
         FFRoute(
           name: HealthWidget.routeName,
@@ -149,6 +139,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: HealthlogdetailWidget.routeName,
           path: HealthlogdetailWidget.routePath,
           builder: (context, params) => HealthlogdetailWidget(),
+        ),
+        FFRoute(
+          name: NotificationWidget.routeName,
+          path: NotificationWidget.routePath,
+          builder: (context, params) => NotificationWidget(),
+        ),
+        FFRoute(
+          name: ImageWidget.routeName,
+          path: ImageWidget.routePath,
+          builder: (context, params) => ImageWidget(),
+        ),
+        FFRoute(
+          name: Login2Widget.routeName,
+          path: Login2Widget.routePath,
+          builder: (context, params) => Login2Widget(),
+        ),
+        FFRoute(
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
+          builder: (context, params) => HomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -317,7 +327,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login1';
+            return '/getstartedpage';
           }
           return null;
         },

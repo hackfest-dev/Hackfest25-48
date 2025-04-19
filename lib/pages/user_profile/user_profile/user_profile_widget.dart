@@ -39,6 +39,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
 
     _model.textController4 ??= TextEditingController(text: 'San Francisco, CA');
     _model.textFieldFocusNode4 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

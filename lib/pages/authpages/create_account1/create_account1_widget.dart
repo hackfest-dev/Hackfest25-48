@@ -10,13 +10,7 @@ import 'create_account1_model.dart';
 export 'create_account1_model.dart';
 
 class CreateAccount1Widget extends StatefulWidget {
-  const CreateAccount1Widget({
-    super.key,
-    required this.check,
-  });
-
-  /// this is the loc check
-  final bool? check;
+  const CreateAccount1Widget({super.key});
 
   static String routeName = 'CreateAccount1';
   static String routePath = '/createAccount1';
@@ -35,17 +29,19 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
     super.initState();
     _model = createModel(context, () => CreateAccount1Model());
 
-    _model.emailAddressTextController1 ??= TextEditingController();
-    _model.emailAddressFocusNode1 ??= FocusNode();
+    _model.usernameTextController ??= TextEditingController();
+    _model.usernameFocusNode ??= FocusNode();
 
-    _model.emailAddressTextController2 ??= TextEditingController();
-    _model.emailAddressFocusNode2 ??= FocusNode();
+    _model.emailAddressTextController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
     _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -165,9 +161,8 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                   child: Container(
                                     width: 370.0,
                                     child: TextFormField(
-                                      controller:
-                                          _model.emailAddressTextController1,
-                                      focusNode: _model.emailAddressFocusNode1,
+                                      controller: _model.usernameTextController,
+                                      focusNode: _model.usernameFocusNode,
                                       autofocus: true,
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
@@ -228,7 +223,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .emailAddressTextController1Validator
+                                          .usernameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -240,8 +235,8 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                     width: 370.0,
                                     child: TextFormField(
                                       controller:
-                                          _model.emailAddressTextController2,
-                                      focusNode: _model.emailAddressFocusNode2,
+                                          _model.emailAddressTextController,
+                                      focusNode: _model.emailAddressFocusNode,
                                       autofocus: true,
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
@@ -302,7 +297,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .emailAddressTextController2Validator
+                                          .emailAddressTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -487,62 +482,68 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                     ),
                                   ),
                                 ),
-                                Material(
-                                  color: Colors.transparent,
-                                  child: Theme(
-                                    data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
-                                        visualDensity: VisualDensity.compact,
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 10.0),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: Theme(
+                                      data: ThemeData(
+                                        checkboxTheme: CheckboxThemeData(
+                                          visualDensity: VisualDensity.compact,
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                        ),
+                                        unselectedWidgetColor:
+                                            FlutterFlowTheme.of(context)
+                                                .alternate,
                                       ),
-                                      unselectedWidgetColor:
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                    ),
-                                    child: CheckboxListTile(
-                                      value: _model.checkboxListTileValue ??=
-                                          false,
-                                      onChanged: (newValue) async {
-                                        safeSetState(() => _model
-                                            .checkboxListTileValue = newValue!);
-                                        if (newValue!) {
-                                          safeSetState(() {});
-                                        }
-                                      },
-                                      title: Text(
-                                        'Location',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      subtitle: Text(
-                                        'By checking this, you allow us to access your location to monitor you plants',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                      tileColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      activeColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      checkColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      dense: false,
-                                      controlAffinity:
-                                          ListTileControlAffinity.leading,
-                                      contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              12.0, 0.0, 12.0, 0.0),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                      child: CheckboxListTile(
+                                        value: _model.checkboxListTileValue ??=
+                                            false,
+                                        onChanged: (newValue) async {
+                                          safeSetState(() =>
+                                              _model.checkboxListTileValue =
+                                                  newValue!);
+                                          if (newValue!) {
+                                            safeSetState(() {});
+                                          }
+                                        },
+                                        title: Text(
+                                          'Location',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge
+                                              .override(
+                                                fontFamily: 'Inter Tight',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        subtitle: Text(
+                                          'By checking this, you allow us to access your location to monitor you plants',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        tileColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        activeColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        checkColor:
+                                            FlutterFlowTheme.of(context).info,
+                                        dense: false,
+                                        controlAffinity:
+                                            ListTileControlAffinity.leading,
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                12.0, 0.0, 12.0, 0.0),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -551,7 +552,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
-                                    onPressed: (((_model.emailAddressTextController2
+                                    onPressed: (((_model.emailAddressTextController
                                                             .text ==
                                                         '') ||
                                                 (_model.passwordTextController
@@ -582,7 +583,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                             final user = await authManager
                                                 .createAccountWithEmail(
                                               context,
-                                              _model.emailAddressTextController1
+                                              _model.emailAddressTextController
                                                   .text,
                                               _model
                                                   .passwordTextController.text,
@@ -592,13 +593,13 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                             }
 
                                             _model.newProfile =
-                                                await ProfilesTable().insert({
+                                                await ProfileTable().insert({
                                               'id': '',
                                               'full_name': '',
                                               'email': '',
                                             });
 
-                                            context.goNamedAuth(
+                                            context.pushNamedAuth(
                                                 HomePageWidget.routeName,
                                                 context.mounted);
 
@@ -643,7 +644,10 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed(Login1Widget.routeName);
+                                      if (Navigator.of(context).canPop()) {
+                                        context.pop();
+                                      }
+                                      context.pushNamed(Login2Widget.routeName);
                                     },
                                     child: RichText(
                                       textScaler:

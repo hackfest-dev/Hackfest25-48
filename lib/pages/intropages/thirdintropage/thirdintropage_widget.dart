@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'thirdintropage_model.dart';
 export 'thirdintropage_model.dart';
@@ -24,6 +25,8 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ThirdintropageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,7 +63,7 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Identify Your Plants and its health',
+                            'Smart Care Plans and Notifications',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -88,7 +91,7 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/plant-scan-carousel.png',
+                              'assets/images/plant-calendar.png',
                               width: 200.0,
                               height: 200.0,
                               fit: BoxFit.contain,
@@ -110,7 +113,7 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Snap a Photo to Identify Your Plant and Diagnose it',
+                            'Get a Sheduled Plan to Take Care of Your Plant ',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -136,8 +139,8 @@ class _ThirdintropageWidgetState extends State<ThirdintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 70.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(CreateAccount1Widget.routeName);
                             },
                             text: 'Next',
                             options: FFButtonOptions(

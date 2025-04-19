@@ -1,10 +1,10 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'update_plant_widget.dart' show UpdatePlantWidget;
+import 'image_widget.dart' show ImageWidget;
 import 'package:flutter/material.dart';
 
-class UpdatePlantModel extends FlutterFlowModel<UpdatePlantWidget> {
-  ///  State fields for stateful widgets in this component.
+class ImageModel extends FlutterFlowModel<ImageWidget> {
+  ///  State fields for stateful widgets in this page.
 
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =

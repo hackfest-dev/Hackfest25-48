@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'getstartedpage_model.dart';
 export 'getstartedpage_model.dart';
@@ -24,6 +25,8 @@ class _GetstartedpageWidgetState extends State<GetstartedpageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GetstartedpageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,7 +63,7 @@ class _GetstartedpageWidgetState extends State<GetstartedpageWidget> {
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 280.0, 0.0, 0.0),
+                                0.0, 260.0, 0.0, 0.0),
                             child: Text(
                               'Grow Pal',
                               style: FlutterFlowTheme.of(context)
@@ -128,8 +131,8 @@ class _GetstartedpageWidgetState extends State<GetstartedpageWidget> {
                             child: Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  context.pushNamed(FirstIntroWidget.routeName);
                                 },
                                 text: 'Get Started',
                                 options: FFButtonOptions(

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'topnavi_model.dart';
@@ -11,13 +12,7 @@ export 'topnavi_model.dart';
 /// notification bell at the right side of the bar and a back button that is
 /// only visible in all pages except the homepage
 class TopnaviWidget extends StatefulWidget {
-  const TopnaviWidget({
-    super.key,
-    bool? hidden,
-  }) : this.hidden = hidden ?? false;
-
-  /// hidden in homepage
-  final bool hidden;
+  const TopnaviWidget({super.key});
 
   @override
   State<TopnaviWidget> createState() => _TopnaviWidgetState();
@@ -36,6 +31,8 @@ class _TopnaviWidgetState extends State<TopnaviWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TopnaviModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -72,25 +69,23 @@ class _TopnaviWidgetState extends State<TopnaviWidget> {
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
-                if (widget.hidden == false)
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 8.0,
-                      borderWidth: 1.0,
-                      buttonSize: 40.0,
-                      icon: Icon(
-                        Icons.arrow_back_rounded,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24.0,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 8.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 24.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(HomePageWidget.routeName);
+                    },
                   ),
+                ),
                 Container(
                   decoration: BoxDecoration(),
                   child: Row(
@@ -149,8 +144,8 @@ class _TopnaviWidgetState extends State<TopnaviWidget> {
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 24.0,
                 ),
-                onPressed: () {
-                  print('IconButton pressed ...');
+                onPressed: () async {
+                  context.pushNamed(NotificationWidget.routeName);
                 },
               ),
             ),

@@ -34,6 +34,8 @@ class _HealthlogdetailWidgetState extends State<HealthlogdetailWidget>
       length: 4,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,9 +78,7 @@ class _HealthlogdetailWidgetState extends State<HealthlogdetailWidget>
                                   child: wrapWithModel(
                                     model: _model.topnaviModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: TopnaviWidget(
-                                      hidden: false,
-                                    ),
+                                    child: TopnaviWidget(),
                                   ),
                                 ),
                               ],

@@ -25,6 +25,8 @@ class _MyplantsWidgetState extends State<MyplantsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MyplantsModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

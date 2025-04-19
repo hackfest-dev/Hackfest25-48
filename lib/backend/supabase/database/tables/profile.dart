@@ -1,18 +1,18 @@
 import '../database.dart';
 
-class ProfilesTable extends SupabaseTable<ProfilesRow> {
+class ProfileTable extends SupabaseTable<ProfileRow> {
   @override
-  String get tableName => 'profiles';
+  String get tableName => 'profile';
 
   @override
-  ProfilesRow createRow(Map<String, dynamic> data) => ProfilesRow(data);
+  ProfileRow createRow(Map<String, dynamic> data) => ProfileRow(data);
 }
 
-class ProfilesRow extends SupabaseDataRow {
-  ProfilesRow(Map<String, dynamic> data) : super(data);
+class ProfileRow extends SupabaseDataRow {
+  ProfileRow(Map<String, dynamic> data) : super(data);
 
   @override
-  SupabaseTable get table => ProfilesTable();
+  SupabaseTable get table => ProfileTable();
 
   String get id => getField<String>('id')!;
   set id(String value) => setField<String>('id', value);

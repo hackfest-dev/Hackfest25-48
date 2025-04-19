@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'first_intro_widget.dart' show FirstIntroWidget;
 import 'package:flutter/material.dart';
 

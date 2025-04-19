@@ -26,6 +26,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,22 +61,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: wrapWithModel(
-                                    model: _model.topnaviModel,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: TopnaviWidget(
-                                      hidden: true,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                          children: [],
                         ),
                         Expanded(
                           child: Container(
@@ -386,56 +373,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: Align(
                                             alignment:
                                                 AlignmentDirectional(1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 30.0, 0.0),
-                                              child: Container(
-                                                width: 150.0,
-                                                height: 40.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      'View All',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            fontSize: 20.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                    Expanded(
-                                                      child:
-                                                          FlutterFlowIconButton(
-                                                        borderRadius: 8.0,
-                                                        buttonSize: 20.0,
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        icon: Icon(
-                                                          Icons.arrow_right_alt,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          size: 28.0,
+                                            child: Container(
+                                              width: 150.0,
+                                              height: 40.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    'View All',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
                                                         ),
-                                                        onPressed: () {
-                                                          print(
-                                                              'IconButton pressed ...');
-                                                        },
+                                                  ),
+                                                  Expanded(
+                                                    child:
+                                                        FlutterFlowIconButton(
+                                                      borderRadius: 8.0,
+                                                      buttonSize: 30.0,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      icon: Icon(
+                                                        Icons.arrow_right_alt,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 25.0,
                                                       ),
+                                                      onPressed: () {
+                                                        print(
+                                                            'IconButton pressed ...');
+                                                      },
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -529,6 +511,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       updateCallback: () => safeSetState(() {}),
                       child: BottomnavWidget(),
                     ),
+                  ),
+                  wrapWithModel(
+                    model: _model.topnaviModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: TopnaviWidget(),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'secondintropage_model.dart';
 export 'secondintropage_model.dart';
@@ -24,6 +25,8 @@ class _SecondintropageWidgetState extends State<SecondintropageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SecondintropageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,7 +63,7 @@ class _SecondintropageWidgetState extends State<SecondintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Identify Your Plants and its health',
+                            'Track Plant Growth Over Time',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -88,7 +91,7 @@ class _SecondintropageWidgetState extends State<SecondintropageWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/plant-scan-carousel.png',
+                              'assets/images/plant-growth.png',
                               width: 200.0,
                               height: 200.0,
                               fit: BoxFit.contain,
@@ -110,7 +113,7 @@ class _SecondintropageWidgetState extends State<SecondintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Text(
-                            'Snap a Photo to Identify Your Plant and Diagnose it',
+                            'Uplaod Photos and get Visual Reports',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -136,8 +139,8 @@ class _SecondintropageWidgetState extends State<SecondintropageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 70.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(ThirdintropageWidget.routeName);
                             },
                             text: 'Next',
                             options: FFButtonOptions(

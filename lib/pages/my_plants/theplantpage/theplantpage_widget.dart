@@ -25,6 +25,8 @@ class _TheplantpageWidgetState extends State<TheplantpageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TheplantpageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

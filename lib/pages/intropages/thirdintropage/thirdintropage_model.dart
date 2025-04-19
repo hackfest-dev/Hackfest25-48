@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'thirdintropage_widget.dart' show ThirdintropageWidget;
 import 'package:flutter/material.dart';
 
