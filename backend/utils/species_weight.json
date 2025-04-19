@@ -1,0 +1,51 @@
+{
+    "aloevera": {
+        "bounding_box": 0.25,
+        "green_ratio": 0.15,
+        "leaf_count": 0.2,
+        "color_health": 0.2,
+        "sunlight_proxy": 0.2
+    },
+    "tulsi": {
+        "bounding_box": 0.2,
+        "green_ratio": 0.25,
+        "leaf_count": 0.2,
+        "color_health": 0.15,
+        "sunlight_proxy": 0.2
+    },
+    "rose": {
+        "bounding_box": 0.25,
+        "green_ratio": 0.15,
+        "leaf_count": 0.2,
+        "color_health": 0.2,
+        "sunlight_proxy": 0.2
+    },
+    "money_plant": {
+        "bounding_box": 0.25,
+        "green_ratio": 0.25,
+        "leaf_count": 0.2,
+        "color_health": 0.2,
+        "sunlight_proxy": 0.1
+    },
+    "neem": {
+        "bounding_box": 0.25,
+        "green_ratio": 0.2,
+        "leaf_count": 0.2,
+        "color_health": 0.15,
+        "sunlight_proxy": 0.2
+    },
+    "mint": {
+        "bounding_box": 0.2,
+        "green_ratio": 0.25,
+        "leaf_count": 0.2,
+        "color_health": 0.15,
+        "sunlight_proxy": 0.2
+    },
+    "succulents": {
+        "bounding_box": 0.25,
+        "green_ratio": 0.15,
+        "leaf_count": 0.2,
+        "color_health": 0.2,
+        "sunlight_proxy": 0.2
+    }
+}
