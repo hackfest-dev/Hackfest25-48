@@ -87,11 +87,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : GetstartedpageWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
           name: GetstartedpageWidget.routeName,
           path: GetstartedpageWidget.routePath,
           builder: (context, params) => GetstartedpageWidget(),
@@ -155,11 +150,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: HomeWidget.routeName,
-          path: HomeWidget.routePath,
-          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: Home3Widget.routeName,

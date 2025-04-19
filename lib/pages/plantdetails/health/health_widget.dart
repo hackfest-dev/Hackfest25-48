@@ -263,14 +263,47 @@ class _HealthWidgetState extends State<HealthWidget>
                                             ),
                                           ),
                                           Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Column(
+                                            child: FutureBuilder<
+                                                List<NotificationRow>>(
+                                              future:
+                                                  NotificationTable().queryRows(
+                                                queryFn: (q) => q,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<NotificationRow>
+                                                    columnNotificationRowList =
+                                                    snapshot.data!;
+
+                                                return Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  children: [
-                                                    Container(
+                                                  children: List.generate(
+                                                      columnNotificationRowList
+                                                          .length,
+                                                      (columnIndex) {
+                                                    final columnNotificationRow =
+                                                        columnNotificationRowList[
+                                                            columnIndex];
+                                                    return Container(
                                                       width: 393.0,
                                                       height: 100.0,
                                                       decoration: BoxDecoration(
@@ -279,7 +312,11 @@ class _HealthWidgetState extends State<HealthWidget>
                                                             .secondaryBackground,
                                                       ),
                                                       child: Text(
-                                                        'Hello World',
+                                                        valueOrDefault<String>(
+                                                          columnNotificationRow
+                                                              .notificationText,
+                                                          'Notification',
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -291,10 +328,10 @@ class _HealthWidgetState extends State<HealthWidget>
                                                                       0.0,
                                                                 ),
                                                       ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                                    );
+                                                  }),
+                                                );
+                                              },
                                             ),
                                           ),
                                         ],

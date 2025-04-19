@@ -1,5 +1,4 @@
 // Export pages
-export '/pages/homepage/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/intropages/getstartedpage/getstartedpage_widget.dart'
     show GetstartedpageWidget;
 export '/pages/intropages/first_intro/first_intro_widget.dart'
@@ -18,10 +17,9 @@ export '/pages/authpages/create_account/create_account_widget.dart'
 export '/pages/plantdetails/health/health_widget.dart' show HealthWidget;
 export '/pages/plantdetails/healthlogdetail/healthlogdetail_widget.dart'
     show HealthlogdetailWidget;
-export '/pages/my_plants/notificationpage/notification/notification_widget.dart'
+export '/notificationpage/notification/notification_widget.dart'
     show NotificationWidget;
 export '/pages/uploadimage/image/image_widget.dart' show ImageWidget;
 export '/pages/authpages/login/login_widget.dart' show LoginWidget;
-export '/pages/home/home_widget.dart' show HomeWidget;
 export '/pages/homepage/home3/home3_widget.dart' show Home3Widget;
 export '/pages/chatagent/chat/chat_widget.dart' show ChatWidget;
